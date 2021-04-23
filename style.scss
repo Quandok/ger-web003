@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* (main background) */
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  /* (card background) */
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  /* (accent) */
+  --Soft-violet-img-overlay: hsla(277, 64%, 61%, 0.1);
+  /* (accent) */
+  --Soft-violet: hsl(277, 64%, 61%);
+  /* (main heading, stats) */
+  --White: hsl(0, 0%, 100%);
+  /* (main paragraph) */
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (stat headings) */
+  --Medium-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+  color: var(--Slightly-transparent-white);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: var(--Dark-desaturated-blue);
+  min-height: 80vh;
+  width: 85%;
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.image {
+  position: relative;
+  background-color: var(--Soft-violet);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.desk {
+  display: none;
+}
+.mob {
+  display: block;
+  opacity: 0.7;
+  object-fit: cover;
+  width: 100%;
+  mix-blend-mode: multiply;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content {
+  text-align: center;
+  padding: 3em 2em 2em 2em;
+}
+
+h2 {
+  font-size: 1.7em;
+  color: var(--White);
+  margin-bottom: 0.8em;
+}
+
+span {
+  color: var(--Soft-violet);
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-family: "Inter";
+  line-height: 1.7em;
+  font-size: 0.9em;
+  margin-bottom: 3em;
+}
+
+.items {
+  margin-bottom: 2.3em;
+}
+.value {
+  font-size: 1.5em;
+  color: var(--White);
+  margin-bottom: 8px;
+}
+.meta {
+  text-transform: uppercase;
+  font-family: "Inner", sans-serif;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .card {
+    display: flex;
+    min-height: 40vh;
+    min-width: 1080px;
+    border-radius: none;
+    flex-direction: row-reverse;
+  }
+
+  .mob {
+    display: none;
+  }
+  .desk {
+    display: block;
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    max-width: 540px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .image {
+    flex: 1;
+    max-width: 540px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0;
+  }
+
+  .content {
+    flex: 1;
+    max-width: 540px;
+    text-align: left;
+  }
+
+  h2 {
+    top: 0.5em;
+    left: 2em;
+    position: relative;
+    margin-bottom: 1.8em;
+    margin-right: 4em;
+    font-size: 2em;
+  }
+
+  p {
+    left: 3.8em;
+    position: relative;
+    margin-right: 7em;
+  }
+
+  .footer {
+    left: 3.4em;
+    display: flex;
+    gap: 3.5em;
+    position: relative;
+    top: 2em;
+  }
+}
